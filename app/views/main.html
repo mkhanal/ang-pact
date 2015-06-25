@@ -1,0 +1,35 @@
+<div>
+  <h1>Angular - pact</h1>
+  <p class="lead">
+    Location Search
+  </p>
+</div>
+
+
+<form class="form-inline" ng-submit="findLocations()">
+  <div class="form-group">
+    <input class="form-control" placeholder="location search" ng-model="searchTerm">
+  </div>
+  <button id="search-button" type="button" class="btn btn-success" ng-click="findLocations()">Search</button>
+</form>
+
+<div class="row marketing">
+  <h4>Locations </h4>
+  <span class="lead" ng-if="!locations.length">No locations yet !!</span>
+  <table class="table table-striped" ng-if="locations.length">
+    <thead>
+      <tr>
+        <td></td>
+        <td> Id </td>
+        <td> Address </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="location in locations">
+        <td>{{$index+1}}</td>
+        <td ng-bind="location.id"></td>
+        <td ng-bind="location.address"></td>
+      </tr>
+    </tbody>
+  </table>          
+</div>
